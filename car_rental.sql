@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2025 at 04:21 AM
+-- Generation Time: Aug 07, 2026 at 09:39 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -132,10 +132,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Kurt Russel Sabuero', 'admin@driverent.com', '$2y$10$TWV25DXQu8B98SfGJz8EO.rjhBFIwCHKDAAQbKAArcg2AI74OPft2', '09273532291', '123 Admin Street, City, State', 'admin', '2025-11-23 14:54:55', '2025-12-05 21:33:08'),
-(3, 'Jane Smith', 'jane.smith@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '+1234567892', '789 User Road, City, State', 'customer', '2025-11-23 14:54:55', '2025-11-23 14:54:55'),
-(4, 'Mike Johnson', 'mike.johnson@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '+1234567893', '321 Driver Lane, City, State', 'customer', '2025-11-23 14:54:55', '2025-11-23 14:54:55'),
-(7, 'Richard Miculob', 'miculobrichardvictor@gmail.com', '$2y$10$P7p.G7Cs908aqAQNg.Lwou/oCIK0TB/sBEJJYTlpVyi7g.PcS82HG', '09273532291', 'Zone 3 Bonbon', 'customer', '2025-12-05 21:29:18', '2025-12-05 21:31:08');
+(1, 'Admin', 'admin@gmail.com', '$2y$10$TWV25DXQu8B98SfGJz8EO.rjhBFIwCHKDAAQbKAArcg2AI74OPft2', '1234567890', '123 Admin Street, City, State', 'admin', '2025-11-23 14:54:55', '2026-08-06 23:29:56'),
+(7, 'Customer', 'customer@gmail.com', '$2y$10$P7p.G7Cs908aqAQNg.Lwou/oCIK0TB/sBEJJYTlpVyi7g.PcS82HG', '09273532291', 'Zone 3 Bonbon', 'customer', '2025-12-05 21:29:18', '2026-08-06 23:29:35');
 
 --
 -- Indexes for dumped tables
