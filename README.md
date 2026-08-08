@@ -1,60 +1,197 @@
-# CodeIgniter 4 Framework
+# 🚗 Car Rental Management System
 
-## What is CodeIgniter?
+A web-based **Car Rental Management System** designed to simplify vehicle rental operations by allowing customers to browse available cars, make reservations, and manage their rentals, while administrators can manage vehicles, customers, reservations, and payments.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 🚀 Project Overview
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+The application is built with **PHP**, **CodeIgniter 4**, and **MySQL**, following the MVC architecture. It provides separate experiences for **Customers** and **Administrators**, with each role having access to features relevant to their responsibilities.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 👥 User Roles
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### 1. Customer
 
-## Important Change with index.php
+Customers can:
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+* Browse available vehicles.
+* View detailed vehicle information.
+* Check vehicle availability.
+* Create rental reservations.
+* Calculate rental costs based on rental duration.
+* Make payments.
+* View and manage their reservations.
+* Manage their account profile.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### 2. Administrator
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Administrators can:
 
-## Repository Management
+* View an overview through the dashboard.
+* Add, edit, and manage vehicles.
+* Manage customer accounts.
+* Monitor and update reservations.
+* Manage payment records.
+* View rental and revenue reports.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## 🚘 Key Features
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+| **Feature**               | **Description**                                                         |
+| ------------------------- | ----------------------------------------------------------------------- |
+| **Vehicle Management**    | Add, edit, delete, and manage vehicle information and availability.     |
+| **Customer Management**   | Manage registered customer accounts and information.                    |
+| **Reservations**          | Create and manage vehicle rental reservations.                          |
+| **Availability Checking** | Prevent overlapping reservations for the same vehicle.                  |
+| **Payments**              | Record and manage rental payment transactions.                          |
+| **Dashboard**             | Provides an overview of vehicles, customers, reservations, and revenue. |
+| **Reports**               | View rental activity, revenue, and customer statistics.                 |
+| **Authentication**        | Secure login and registration with role-based access.                   |
 
-## Contributing
+## 🏗️ System Architecture
 
-We welcome contributions from the community.
+The project follows the **Model-View-Controller (MVC)** architecture provided by CodeIgniter 4.
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+* **Controllers** – Handle application logic and user requests.
+* **Models** – Manage database operations and business data.
+* **Views** – Provide the user interface for customers and administrators.
+* **Routes** – Define how users access different system features.
 
-## Server Requirements
+## 🗄️ Database
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+The system uses **MySQL/MariaDB** to manage its core data, including:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+* Users
+* Cars
+* Reservations
+* Payments
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## 🔐 Demo Credentials
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Use the following account to access the administrator features:
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+| **Account**  | **Credentials** |
+| ------------ | --------------- |
+| **Username** | `admin`         |
+| **Password** | `password`      |
+| **Role**     | Administrator   |
+
+> **Note:** These credentials are intended for local/demo use only.
+
+## 🛠️ Technologies Used
+
+* **PHP**
+* **CodeIgniter 4**
+* **MySQL / MariaDB**
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **Composer**
+
+## 💻 How to Install & Run
+
+### 1. Install the Requirements
+
+Before running the project, install:
+
+* **PHP 8.1 or higher**
+* **Composer**
+* **MySQL / MariaDB**
+* **XAMPP** or another local PHP development environment
+
+### 2. Download the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/chardoxx-3/Car-Rental-Management-System.git
+```
+
+Then enter the project directory:
+
+```bash
+cd Car-Rental-Management-System
+```
+
+You can also download the repository as a **ZIP** from GitHub and extract it to your local development folder.
+
+### 3. Install CodeIgniter Dependencies
+
+Inside the project folder, run:
+
+```bash
+composer install
+```
+
+This installs the PHP dependencies required by the CodeIgniter 4 application.
+
+### 4. Configure the Environment
+
+Copy the example environment file:
+
+```bash
+copy env .env
+```
+
+Then open `.env` and configure your database connection.
+
+Example:
+
+```env
+database.default.hostname = localhost
+database.default.database = car_rental
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+```
+
+Adjust the database name, username, and password according to your local MySQL configuration.
+
+### 5. Create the Database
+
+Open **phpMyAdmin** or MySQL and create a database for the project.
+
+For example:
+
+```text
+car_rental
+```
+
+Import the SQL database file included in the project:
+
+```text
+car_rental.sql
+```
+
+This will create the required tables and sample data.
+
+### 6. Start the CodeIgniter Development Server
+
+From the project directory, run:
+
+```bash
+php spark serve
+```
+
+The application will normally be available at:
+
+```text
+http://localhost:8080
+```
+
+Open the address in your browser.
+
+### 7. Login
+
+Use the demo administrator account:
+
+```text
+Username: admin
+Password: password
+```
+
+## 🔄 Rental Workflow
+
+**Browse Cars → Check Availability → Select Rental Dates → Create Reservation → Make Payment → Confirmed Reservation**
+
+## 🎯 Project Purpose
+
+This project was developed to demonstrate practical skills in **web development, database management, MVC architecture, CRUD operations, authentication, reservation systems, and payment management**.
